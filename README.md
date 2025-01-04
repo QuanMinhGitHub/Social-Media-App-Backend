@@ -30,7 +30,7 @@
       "email": "string",
       "password": "string"
     }
-  
+
 - **Response**:
     ```json
     {
