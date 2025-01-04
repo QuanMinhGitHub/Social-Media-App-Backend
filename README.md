@@ -8,7 +8,8 @@
 - **Payload**:
     ```json
     {
-      "name": "string",
+      "firstname": "string",
+      "lastname": "string",
       "email": "string",
       "password": "string"
     }
@@ -37,7 +38,7 @@
     }
 
 ### Sign-Out
-- **Endpoint**: `POST /api/auth/sign-out`
+- **Endpoint**: `POST /api/sign-out`
 
 - **Headers**:
     ```json
@@ -54,7 +55,7 @@
 ## Avatar Management
 
 ### Upload/Update Avatar
-- **Endpoint**: `PUT /api/auth/avatar`
+- **Endpoint**: `PUT /api/avatar`
 
 - **Headers**:
     ```json
@@ -84,7 +85,8 @@
     ```json
     [
       {
-        "name": "string",
+        "firstname": "string",
+        "lastname": "string",
         "content": "string",
         "image": "string (optional)",
         "likeCount": "integer",
