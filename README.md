@@ -30,26 +30,11 @@
       "email": "string",
       "password": "string"
     }
-
+  
 - **Response**:
     ```json
     {
       "token": "string"
-    }
-
-### Sign-Out
-- **Endpoint**: `POST /api/sign-out`
-
-- **Headers**:
-    ```json
-    {
-      "Authorization": "Bearer <token>"
-    }
-
-- **Response**:
-    ```json
-    {
-      "message": "Sign-out successful"
     }
 
 ## Avatar Management
