@@ -11,14 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "posts")
-public class Post {
+@Table(name = "likes")
+public class Like {
     @Id
     @GeneratedValue
     private Integer id;
 
-    private String content;
-    private String image;
-
+    private Integer postId;
     private Integer userId;
 }
