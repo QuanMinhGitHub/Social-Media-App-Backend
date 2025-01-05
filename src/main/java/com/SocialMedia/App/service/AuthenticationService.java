@@ -33,11 +33,14 @@ public class AuthenticationService {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Email is already taken");
         }
 
+        String defaultAvatar = "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg";
+
         var user = User.builder()
                 .firstname(request.getFirstname())
                 .lastname(request.getLastname())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
+                .avatar(defaultAvatar)
                 .role(Role.USER)
                 .build();
         repository.save(user);

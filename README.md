@@ -102,45 +102,6 @@
       "message": "Post created successfully"
     }
 
-### Update Post
-- **Endpoint**: `PUT /api/posts/{postId}`
-
-- **Headers**:
-    ```json
-    {
-      "Authorization": "Bearer <token>"
-    }
-
-- **Payload**:
-    ```json
-    {
-      "content": "string",
-      "image": "string (optional)"
-    }
-
-- **Response**:
-    ```json
-    {
-      "message": "Post updated successfully",
-      "content": "string",
-      "image": "string (optional)"
-    }
-
-### Delete Post
-- **Endpoint**: `DELETE /api/posts/{postId}`
-
-- **Headers**:
-    ```json
-    {
-      "Authorization": "Bearer <token>"
-    }
-
-- **Response**:
-    ```json
-    {
-      "message": "Post deleted successfully"
-    }
-
 ## Post Engagement
 
 ### Like Post

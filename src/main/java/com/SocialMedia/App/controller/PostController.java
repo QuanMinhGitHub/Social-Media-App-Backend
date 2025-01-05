@@ -2,7 +2,6 @@ package com.SocialMedia.App.controller;
 
 import com.SocialMedia.App.model.Post;
 import com.SocialMedia.App.model.User;
-import com.SocialMedia.App.repository.PostRepository;
 import com.SocialMedia.App.repository.UserRepository;
 import com.SocialMedia.App.service.JwtService;
 import com.SocialMedia.App.service.PostService;
@@ -52,7 +51,4 @@ public class PostController {
         return ResponseEntity.ok("Post created successfully");
     }
 
-//    @PutMapping
-//
-//    @DeleteMapping
 }
