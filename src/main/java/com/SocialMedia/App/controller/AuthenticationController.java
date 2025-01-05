@@ -1,8 +1,8 @@
 package com.SocialMedia.App.controller;
 
-import com.SocialMedia.App.auth.AuthenticationRequest;
-import com.SocialMedia.App.auth.AuthenticationResponse;
-import com.SocialMedia.App.auth.RegisterRequest;
+import com.SocialMedia.App.request.SigninRequest;
+import com.SocialMedia.App.response.AuthenticationResponse;
+import com.SocialMedia.App.request.SignupRequest;
 import com.SocialMedia.App.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +21,12 @@ public class AuthenticationController {
     private AuthenticationService service;
 
     @PostMapping("/sign-up")
-    public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request) {
+    public ResponseEntity<AuthenticationResponse> register(@RequestBody SignupRequest request) {
         return ResponseEntity.ok(service.register(request));
     }
 
     @PostMapping("/sign-in")
-    public ResponseEntity<AuthenticationResponse> register(@RequestBody AuthenticationRequest request) {
+    public ResponseEntity<AuthenticationResponse> register(@RequestBody SigninRequest request) {
         return ResponseEntity.ok(service.authenticate(request));
     }
 }

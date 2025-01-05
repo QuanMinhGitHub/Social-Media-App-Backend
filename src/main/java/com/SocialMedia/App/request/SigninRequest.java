@@ -1,4 +1,4 @@
-package com.SocialMedia.App.auth;
+package com.SocialMedia.App.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterRequest {
-    private String firstname;
-    private String lastname;
+public class SigninRequest {
     private String email;
     private String password;
 }

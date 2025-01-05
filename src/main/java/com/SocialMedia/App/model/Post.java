@@ -18,8 +18,5 @@ public class Post {
     private Integer id;
     private String content;
     private String image;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    private Integer userId;
 }

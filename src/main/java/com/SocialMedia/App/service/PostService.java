@@ -17,7 +17,13 @@ public class PostService {
         return postRepository.findAll();
     }
 
-    public Post createPost(Post post) {
-        return postRepository.save(post);
+    public void createPost(Integer userId, Post postRequest) {
+        Post post = Post.builder()
+                .content(postRequest.getContent())
+                .image(postRequest.getImage())
+                .userId(userId)
+                .build();
+
+        postRepository.save(post);
     }
 }

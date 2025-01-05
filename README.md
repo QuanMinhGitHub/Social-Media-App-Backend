@@ -17,8 +17,7 @@
 - **Response**:
     ```json
     {
-      "message": "Registered successfully",
-      "token": "string"
+      "message": "Registered successfully"
     }
 
 ### Sign-In
@@ -34,6 +33,7 @@
 - **Response**:
     ```json
     {
+      "message": "Sign in successfully",
       "token": "string"
     }
 
