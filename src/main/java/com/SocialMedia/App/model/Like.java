@@ -17,6 +17,6 @@ public class Like {
     @GeneratedValue
     private Integer id;
 
-    private Integer postId;
     private Integer userId;
+    private Integer postId;
 }

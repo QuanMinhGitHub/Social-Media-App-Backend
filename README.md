@@ -70,18 +70,18 @@
     ```json
     [
       {
+        "id": "integer",
         "firstname": "string",
         "lastname": "string",
         "content": "string",
         "image": "string (optional)",
         "likeCount": "integer",
-        "commentCount": "integer",
-        "createdAt": "string"
+        "commentCount": "integer"
       }
     ]
 
 ### Create Post
-- **Endpoint**: `POST /api/posts`
+- **Endpoint**: `POST /api/posts/create-post`
 
 - **Headers**:
     ```json
@@ -105,7 +105,7 @@
 ## Post Engagement
 
 ### Like Post
-- **Endpoint**: `POST /api/posts/{postId}/like`
+- **Endpoint**: `POST /api/posts/like`
 
 - **Headers**:
     ```json
@@ -116,12 +116,11 @@
 - **Response**:
     ```json
     {
-      "message": "Post liked successfully",
       "likeCount": "integer"
     }
 
 ### Comment on Post
-- **Endpoint**: `POST /api/posts/{postId}/comment`
+- **Endpoint**: `POST /api/posts/comment`
 
 - **Headers**:
     ```json
@@ -138,7 +137,5 @@
 - **Response**:
     ```json
     {
-      "message": "Comment added successfully",
-      "content": "string",
       "commentCount": "integer"
     }
