@@ -155,4 +155,6 @@
 
 ## Database Design
 
-Below is the ERD (Entity-Relationship Diagram) representing the database design for the app:
+Below is the ERD (Entity-Relationship Diagram) representing the database design for the app
+
+<img width="500" alt="Database Design" src="https://github.com/user-attachments/assets/6855929f-f4aa-4dc8-943e-8aa98f223214" />
