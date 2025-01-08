@@ -37,30 +37,6 @@
       "token": "string"
     }
 
-## Avatar Management
-
-### Upload/Update Avatar
-- **Endpoint**: `PUT /api/avatar`
-
-- **Headers**:
-    ```json
-    {
-      "Authorization": "Bearer <token>"
-    }
-
-- **Payload**:
-    ```json
-    {
-      "avatar": "string"
-    }
-
-- **Response**:
-    ```json
-    {
-      "message": "Avatar updated successfully",
-      "avatar": "url"
-    }
-
 ## Post Management
 
 ### Get Posts
@@ -102,6 +78,43 @@
       "message": "Post created successfully"
     }
 
+### Update Post
+- **Endpoint**: `PUT /api/posts/{postId}`
+
+- **Headers**:
+    ```json
+    {
+      "Authorization": "Bearer <token>"
+    }
+
+- **Payload**:
+    ```json
+    {
+      "content": "string",
+      "image": "string (optional)"
+    }
+
+- **Response**:
+    ```json
+    {
+      "message": "Post updated successfully"
+    }
+
+### Delete Post
+- **Endpoint**: `DELETE /api/posts/{postId}`
+
+- **Headers**:
+    ```json
+    {
+      "Authorization": "Bearer <token>"
+    }
+
+- **Response**:
+    ```json
+    {
+      "message": "Post deleted successfully"
+    }
+
 ## Post Engagement
 
 ### Like Post
@@ -139,3 +152,7 @@
     {
       "commentCount": "integer"
     }
+
+## Database Design
+
+Below is the ERD (Entity-Relationship Diagram) representing the database design for the app:

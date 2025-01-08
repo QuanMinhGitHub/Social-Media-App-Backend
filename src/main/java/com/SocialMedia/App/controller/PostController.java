@@ -51,4 +51,56 @@ public class PostController {
         return ResponseEntity.ok("Post created successfully");
     }
 
+    @PutMapping("/{postId}")
+    public ResponseEntity<String> updatePost(@PathVariable Integer postId, @RequestBody Post postRequest, HttpServletRequest request) {
+        String authHeader = request.getHeader("Authorization");
+
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("No valid token provided");
+        }
+
+        String token = authHeader.substring(7);
+        String userEmail = jwtService.extractUsername(token);
+
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+
+        Post post = postService.getPostById(postId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Post not found"));
+
+        if (!post.getUserId().equals(user.getId())) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You are not authorized to update this post");
+        }
+
+        postService.updatePost(postId, postRequest);
+
+        return ResponseEntity.ok("Post updated successfully");
+    }
+
+    @DeleteMapping("/{postId}")
+    public ResponseEntity<String> deletePost(@PathVariable Integer postId, HttpServletRequest request) {
+        String authHeader = request.getHeader("Authorization");
+
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("No valid token provided");
+        }
+
+        String token = authHeader.substring(7);
+        String userEmail = jwtService.extractUsername(token);
+
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+
+        Post post = postService.getPostById(postId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Post not found"));
+
+        if (!post.getUserId().equals(user.getId())) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You are not authorized to delete this post");
+        }
+
+        postService.deletePost(postId);
+
+        return ResponseEntity.ok("Post deleted successfully");
+    }
+
 }
